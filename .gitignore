@@ -1,0 +1,28 @@
+/3JvEoKY2pFm76i2QmYKgafCr
+/48Qn1C16CnNuMssG
+
+# Mac filesystem dust
+.DS_Store
+
+# Vagrant
+.vagrant
+
+# Sonarlint
+.sonarlint
+
+#### Editors:
+
+# Netbeans
+/nbproject
+
+# Visual Studio Code
+.vscode
+
+# Intellij
+.idea
+
+#sonar
+.sonar
+.scannerwork
+sonar-project.properties
+composer.lock

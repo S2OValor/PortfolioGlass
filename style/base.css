@@ -1,0 +1,309 @@
+@charset "UTF-8";
+
+* {
+    box-sizing: border-box!important;
+
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    --scrollbar-track-bg: rgba(0, 0, 0, 0.06);
+    --scrollbar-thumb-bg: rgba(0, 0, 0, 0.12);
+
+    --stage-parts-bg: rgba(0, 0, 0, 0.4);
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+/* div 全体 */
+div {
+    overflow: hidden;
+}
+
+/* ===== スクロールバー ===== */
+* {
+    /* 細いスクロールバー */
+    /* scrollbar-width: thin; */
+    /* thumb色 track色 の順 */
+    /* scrollbar-color: var(--scrollbar-thumb-bg) var(--scrollbar-track-bg); */
+}
+
+*::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+    border-radius: 3px;
+    background: var(--scrollbar-track-bg);
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.08);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.08);
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: var(--scrollbar-thumb-bg);
+    -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 選択禁止クラス */
+.no-select {
+    -moz-user-select: none;
+    -o-user-select:none;
+    -khtml-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    user-select:none!important;
+}
+
+#stage {
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden scroll;
+}
+
+header, nav, main, footer {
+    z-index: 6;
+}
+
+nav, footer {
+    background-color: var(--stage-parts-bg);
+    backdrop-filter: .4rem;
+}
+
+/* ヘッダー部分：開始 */
+header {
+    height: 1.8rem;
+
+    padding-left: .7rem;
+
+    font-size: .8rem;
+    font-weight: bold;
+    color: #333;
+
+    background-color: aquamarine;
+    opacity: .8;
+}
+/* ヘッダー部分：終了 */
+
+
+/* ナビ部分：開始 */
+nav {
+    height: 6rem;
+}
+
+#logo {
+    height: 100%;
+    width: 14rem;
+
+    margin-left: 1rem;
+}
+
+#logoImg {
+    height: 80%;
+    aspect-ratio: 1 / 1;
+
+    background: url(../favicon.ico) no-repeat;
+    background-size: cover;
+}
+
+#logoText {
+    margin: 1rem;
+    font-size: 1.2rem;
+    word-break: keep-all;
+}
+
+#logo a {
+    color: #aaa!important;
+}
+
+#logo a:hover {
+    text-decoration: none!important;
+    color: gold!important;
+}
+
+#menu {
+    height: 100%;
+    width: calc(100% - 14rem - 1rem*3);
+
+    margin: 0 1rem;
+}
+
+#menu a {
+    font-size: 1rem;
+    color: #aaa;
+}
+
+#menu a:hover {
+    color: gold;
+}
+/* ナビ部分：終了 */
+
+
+/* メイン部分：開始 */
+main {
+    min-height: calc(100% - 1.8rem - 6rem - 3.5rem);
+}
+
+#mainCont {
+    width: 100%;
+    margin-left: .4rem;
+    margin-right: .4rem;
+}
+
+#mainContInner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 1.3rem;
+    color: #ddd;
+
+    background-color: var(--stage-parts-bg);
+    backdrop-filter: blue(.4rem);
+
+    border-radius: 1rem;
+}
+/* メイン部分：終了 */
+
+
+/* フッター部分：開始 */
+footer {
+    height: 3.5rem;
+
+    font-size: .8rem;
+    color: #aaa;
+}
+
+footer > span {
+    margin-top: .1rem;
+}
+
+footer a {
+    color: #bbb!important;
+}
+
+footer a:hover {
+    text-decoration: none!important;
+    color: gold!important;
+}
+/* フッター部分：終了 */
+
+
+/* モバイル仕様 */
+@media screen and (orientation: portrait) {
+    #stage {
+        display: flex;
+    }
+}
+
+
+/* Index 専用仕様：開始 */
+.uk-countdown-number {
+    height: 6rem!important;
+    font-size: 5rem!important;
+}
+/* Index 専用仕様：終了 */
+
+
+/* Works 専用仕様：開始 */
+.mainWorksTools {
+    margin: 1rem 2rem;
+}
+
+.mainWorksTools select {
+    border-radius: .6rem;
+    opacity: .8;
+}
+
+.mainWorksTools button {
+    border-radius: .6rem;
+}
+
+#worksGridWrap {
+    margin: 2rem!important;
+}
+
+#worksGridWrap .uk-card {
+    background-color: rgba(255, 255, 255, .85)!important;
+}
+
+#worksTableWrap {
+    background-color: rgba(255, 255, 255, .85);
+
+    border-radius: .4rem;
+    overflow: hidden;
+}
+
+.uk-modal-dialog {
+    border-radius: 1rem!important;
+}
+
+.works-thumbbox {
+	width: 256px;
+	height: 256px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #f6f6f6;
+	border-radius: 14px;
+	overflow: hidden
+}
+
+.works-thumbbox img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain
+}
+
+.mono {
+	font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace
+}
+
+.small {
+	font-size: 12px;
+	opacity: .85
+}
+
+.card-line {
+	margin-top: 6px
+}
+
+.memo-trunc {
+	max-width: 420px
+}
+/* Works 専用仕様：終了 */
+
+
+/* Modal 専用仕様：開始 */
+.uk-modal-title {
+    font-size: 1.6rem!important;
+}
+
+#modal-footer {
+    width: 100%;
+}
+
+#modal-footer > button {
+    justify-content: center;
+    height: 2.2rem!important;
+    border-radius: .6rem;
+    word-break: keep-all;
+    padding: 0;
+    margin: 0 0.2rem;
+    min-width: calc(20% - 0.4rem);
+}
+/* Modal 専用仕様：終了 */
